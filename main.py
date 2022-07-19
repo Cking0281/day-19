@@ -7,14 +7,16 @@ def main():
     user_bet = screen.textinput(title="Make your bet", prompt="Which turtle will win the race? Enter a color: ")
     colors = ("red", "orange", "yellow", "green", "blue", "purple")
 
-    starting_position = -100
+    race_position = -100
 
-    # TODO Need to fix loop variable name
+    turtles = {}
+
     for color in colors:
-        color = Turtle(shape="turtle")
-        color.penup()
-        color.goto(x=-230, y=starting_position)
-        starting_position += 40
+        turtles[color] = (Turtle(shape="turtle"))
+        turtles[color].color(color)
+        turtles[color].penup()
+        turtles[color].goto(x=-230, y=race_position)
+        race_position += 40
 
     screen.exitonclick()
 
